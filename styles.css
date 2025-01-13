@@ -1,14 +1,14 @@
 /* styles.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: white;
+html, body {
+  height: 100%;  /* Ensure the body and html take full height of the viewport */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
 }
 
 #container {
