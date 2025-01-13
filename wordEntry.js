@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const wordParam = urlParams.get('word');
+const wordParam = urlParams.get("word");
 
 if (wordParam) {
     const wordEntry = wordData.find(item => item.word.toLowerCase() === wordParam.toLowerCase());
@@ -10,7 +10,7 @@ if (wordParam) {
             <h2>Type: ${wordEntry.type}</h2>
             <h3>Definitions:</h3>
             <ul>
-                ${wordEntry.definitions.map(def => `<li>${def}</li>`).join('')}
+                ${wordEntry.definitions.map(def => `<li>${def}</li>`).join("")}
             </ul>
         `;
     } else {
@@ -24,4 +24,8 @@ if (wordParam) {
 
 function toggleMode() {
     document.body.classList.toggle("light-mode");
+}
+
+function goBack() {
+    window.history.back();
 }
