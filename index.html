@@ -13,6 +13,19 @@
       <input type="text" id="search" placeholder="Search for Oinkish words..." oninput="showRecommendations()">
       <div id="recommendations"></div>
     </header>
+    
+    <!-- Sidebar with filter options -->
+    <aside id="sidebar">
+      <h3>Filter by Word Type:</h3>
+      <button onclick="filterByType('noun')">Nouns</button>
+      <button onclick="filterByType('verb')">Verbs</button>
+      <button onclick="filterByType('adjective')">Adjectives</button>
+      <button onclick="filterByType('adverb')">Adverbs</button>
+      <button onclick="filterByType('particle')">Particles</button>
+      <button onclick="filterByType('')">All</button>
+    </aside>
+    
+    <!-- Main content area for displaying results -->
     <main>
       <div id="results">
         <!-- Word details will appear here -->
