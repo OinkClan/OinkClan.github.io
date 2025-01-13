@@ -5,17 +5,17 @@ const wordData = [
         definitions: ["A person of great wisdom.", "A title for elders in Oinkish culture."]
     },
     { 
-        word: "Eroi", 
+        word: "Eoina", 
         type: "verb", 
         definitions: ["To speak eloquently.", "To persuade others with words."]
     },
     { 
-        word: "Ounato", 
+        word: "Ounatoi", 
         type: "adjective", 
         definitions: ["Bright, shining.", "Used to describe an illuminated object."]
     },
     { 
-        word: "Ure", 
+        word: "U", 
         type: "particle", 
         definitions: ["Used to indicate future tense.", "An auxiliary particle."]
     }
