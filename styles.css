@@ -1,0 +1,59 @@
+/* CSS for dark and light modes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#recommendations {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendation {
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.go-to-chr {
+    color: #ccc;
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-mode button {
+    background-color: #000;
+    color: #fff;
+}
