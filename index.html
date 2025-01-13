@@ -9,17 +9,27 @@
 <body>
     <div class="container">
         <header>
-            <button id="theme-toggle">Switch to Light Mode</button>
             <h1>The Oinkish Dictionary</h1>
         </header>
 
         <section id="search-section">
-            <input type="text" id="search-bar" placeholder="Search for a word in Oinkish or English">
+            <div class="search-bar-container">
+                <input type="text" id="search-bar" placeholder="Search for a word...">
+                <select id="word-type">
+                    <option value="">All Types</option>
+                    <option value="noun">Noun</option>
+                    <option value="verb">Verb</option>
+                    <option value="adjective">Adjective</option>
+                    <option value="adverb">Adverb</option>
+                    <option value="particle">Particle</option>
+                </select>
+            </div>
             <ul id="recommendations"></ul>
         </section>
 
         <footer>
             <a href="chr.html" class="go-to-chr">Go to 'chr' Page</a>
+            <button id="theme-toggle">Light Mode</button>
         </footer>
     </div>
 
