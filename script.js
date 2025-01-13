@@ -10,14 +10,18 @@ fetch("words.json")
 
 // Get DOM elements
 const searchBar = document.getElementById("search-bar");
+const wordTypeSelect = document.getElementById("word-type");
 const recommendationsList = document.getElementById("recommendations");
 const themeToggle = document.getElementById("theme-toggle");
 
 // Search and display word recommendations
 searchBar.addEventListener("input", function () {
     const query = searchBar.value.toLowerCase();
+    const wordType = wordTypeSelect.value;
+
     const filteredWords = wordsData.filter(word =>
-        word.oinkish.includes(query) || word.english.toLowerCase().includes(query)
+        (word.oinkish.includes(query) || word.english.toLowerCase().includes(query)) &&
+        (!wordType || word.type === wordType)
     );
     displayRecommendations(filteredWords);
 });
@@ -33,15 +37,14 @@ function displayRecommendations(words) {
             window.location.href = `word-detail.html?word=${word.oinkish}`;
         };
         recommendationsList.appendChild(li);
-    });
 }
 
 // Theme toggle functionality
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     if (document.body.classList.contains("light-mode")) {
-        themeToggle.textContent = "Switch to Dark Mode";
+        themeToggle.textContent = "Dark Mode";
     } else {
-        themeToggle.textContent = "Switch to Light Mode";
+        themeToggle.textContent = "Light Mode";
     }
 });
