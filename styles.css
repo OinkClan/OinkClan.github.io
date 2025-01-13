@@ -49,7 +49,8 @@ header {
 #recommendations {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 .recommendation {
@@ -57,7 +58,6 @@ header {
     padding: 10px;
     margin: 5px 0;
     cursor: pointer;
-    text-align: left;
     transition: background-color 0.2s ease;
 }
 
