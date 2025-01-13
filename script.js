@@ -1,10 +1,15 @@
 // script.js
-const wordBank = [
-  { word: "OinkishWord1", type: "noun", meaning: "Meaning of OinkishWord1" },
-  { word: "OinkishWord2", type: "verb", meaning: "Meaning of OinkishWord2" },
-  { word: "OinkishWord3", type: "adjective", meaning: "Meaning of OinkishWord3" },
-  // Add more words here
-];
+let wordBank = []; // Initially empty, will be populated from words.json
+
+// Fetch words from words.json file
+fetch('words.json')
+  .then(response => response.json())  // Parse the JSON
+  .then(data => {
+    wordBank = data;  // Assign the fetched data to wordBank
+  })
+  .catch(error => {
+    console.log('Error loading word bank:', error);  // Handle any errors
+  });
 
 function showRecommendations() {
   const input = document.getElementById("search").value.toLowerCase();
@@ -12,11 +17,14 @@ function showRecommendations() {
   recommendations.innerHTML = ""; // Clear previous recommendations
 
   if (input) {
-    const filteredWords = wordBank.filter(word => word.word.toLowerCase().includes(input));
+    const filteredWords = wordBank.filter(word =>
+      word.oinkish.toLowerCase().includes(input) || word.english.toLowerCase().includes(input)
+    );
+    
     filteredWords.forEach(word => {
       const div = document.createElement("div");
       div.classList.add("recommendation-item");
-      div.textContent = word.word;
+      div.textContent = word.oinkish;
       div.onclick = () => showWordDetails(word);
       recommendations.appendChild(div);
     });
@@ -26,8 +34,8 @@ function showRecommendations() {
 function showWordDetails(word) {
   const results = document.getElementById("results");
   results.innerHTML = `
-    <h2>${word.word}</h2>
+    <h2>${word.oinkish} (${word.english})</h2>
     <p>Type: ${word.type}</p>
-    <p>Meaning: ${word.meaning}</p>
+    <p>Definition: ${word.definition}</p>
   `;
 }
