@@ -10,22 +10,24 @@
   <div id="container">
     <header>
       <h1>The Oinkish Dicanart</h1>
-      <input type="text" id="search" placeholder="Search for Oinkish words..." oninput="showRecommendations()">
+      <div id="search-container">
+        <input type="text" id="search" placeholder="Search for Oinkish words..." oninput="showRecommendations()">
+        
+        <!-- Dropdown menu for word type filter -->
+        <div class="dropdown">
+          <button class="dropbtn" onclick="toggleDropdown()">▼</button>
+          <div id="dropdown-menu" class="dropdown-content">
+            <a href="#" onclick="filterByType('noun')">Nouns</a>
+            <a href="#" onclick="filterByType('verb')">Verbs</a>
+            <a href="#" onclick="filterByType('adjective')">Adjectives</a>
+            <a href="#" onclick="filterByType('adverb')">Adverbs</a>
+            <a href="#" onclick="filterByType('particle')">Particles</a>
+            <a href="#" onclick="filterByType('')">All</a>
+          </div>
+        </div>
+      </div>
       <div id="recommendations"></div>
     </header>
-    
-    <!-- Sidebar with filter options -->
-    <aside id="sidebar">
-      <h3>Filter by Word Type:</h3>
-      <button onclick="filterByType('noun')">Nouns</button>
-      <button onclick="filterByType('verb')">Verbs</button>
-      <button onclick="filterByType('adjective')">Adjectives</button>
-      <button onclick="filterByType('adverb')">Adverbs</button>
-      <button onclick="filterByType('particle')">Particles</button>
-      <button onclick="filterByType('')">All</button>
-    </aside>
-    
-    <!-- Main content area for displaying results -->
     <main>
       <div id="results">
         <!-- Word details will appear here -->
