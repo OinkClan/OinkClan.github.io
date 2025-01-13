@@ -10,30 +10,31 @@
   <div id="container">
     <header>
       <h1>The Oinkish Dicanart</h1>
-      <div id="search-container">
-        <input type="text" id="search" placeholder="Search for Oinkish words..." oninput="showRecommendations()">
-        
-        <!-- Dropdown menu for word type filter -->
-        <div class="dropdown">
-          <button class="dropbtn" onclick="toggleDropdown()">▼</button>
-          <div id="dropdown-menu" class="dropdown-content">
-            <a href="#" onclick="filterByType('noun')">Nouns</a>
-            <a href="#" onclick="filterByType('verb')">Verbs</a>
-            <a href="#" onclick="filterByType('adjective')">Adjectives</a>
-            <a href="#" onclick="filterByType('adverb')">Adverbs</a>
-            <a href="#" onclick="filterByType('particle')">Particles</a>
-            <a href="#" onclick="filterByType('')">All</a>
-          </div>
-        </div>
-      </div>
-      <div id="recommendations"></div>
     </header>
+
+    <!-- Search section with search bar and word type filter -->
+    <section id="search-section">
+      <div class="search-bar-container">
+        <input type="text" id="search-bar" placeholder="Search for a word..." oninput="showRecommendations()">
+        <select id="word-type" onchange="showRecommendations()">
+          <option value="">All Types</option>
+          <option value="noun">Noun</option>
+          <option value="verb">Verb</option>
+          <option value="adjective">Adjective</option>
+          <option value="adverb">Adverb</option>
+          <option value="particle">Particle</option>
+        </select>
+      </div>
+      <ul id="recommendations"></ul>
+    </section>
+
     <main>
       <div id="results">
         <!-- Word details will appear here -->
       </div>
     </main>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
