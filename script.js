@@ -1,55 +1,42 @@
-let wordsData = [];
+// Dummy data for Oinkish dictionary
+const dictionary = {
+    "Oinka": { definition: "Pig", category: "Noun" },
+    "Lupa": { definition: "Friend", category: "Noun" },
+    "Beko": { definition: "Eat", category: "Verb" },
+    "Tupa": { definition: "Big", category: "Adjective" }
+};
 
-// Fetch the words data from the JSON file
-fetch("words.json")
-    .then(response => response.json())
-    .then(data => {
-        wordsData = data;
-    })
-    .catch(error => console.error("Error loading words data:", error));
+document.getElementById('mode-toggle').addEventListener('click', toggleMode);
 
-// Get DOM elements
-const searchBar = document.getElementById("search-bar");
-const wordTypeSelect = document.getElementById("word-type");
-const recommendationsList = document.getElementById("recommendations");
-const themeToggle = document.getElementById("theme-toggle");
-
-// Search and display word recommendations
-searchBar.addEventListener("input", function () {
-    const query = searchBar.value.toLowerCase();
-    const wordType = wordTypeSelect.value;
-
-    // Only display recommendations if there is a query
-    if (query.length > 0) {
-        const filteredWords = wordsData.filter(word =>
-            (word.oinkish.includes(query) || word.english.toLowerCase().includes(query)) &&
-            (!wordType || word.type === wordType)
-        );
-        displayRecommendations(filteredWords);
+function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+    const icon = document.getElementById('mode-toggle');
+    if (document.body.classList.contains('dark-mode')) {
+        icon.textContent = '☀️';
     } else {
-        recommendationsList.innerHTML = ""; // Clear recommendations if query is empty
+        icon.textContent = '🌙';
     }
-});
-
-// Display recommendations
-function displayRecommendations(words) {
-    recommendationsList.innerHTML = "";
-    words.forEach(word => {
-        const li = document.createElement("li");
-        li.classList.add("recommendation");
-        li.textContent = `${word.oinkish} - ${word.english}`;
-        li.onclick = () => {
-            window.location.href = `word-detail.html?word=${word.oinkish}`;
-        };
-        recommendationsList.appendChild(li);
 }
 
-// Theme toggle functionality
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    if (document.body.classList.contains("light-mode")) {
-        themeToggle.textContent = "Dark Mode";
-    } else {
-        themeToggle.textContent = "Light Mode";
+function searchWord() {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const results = document.getElementById('results');
+    results.innerHTML = ''; // Clear previous results
+
+    if (query.length === 0) return;
+
+    for (let word in dictionary) {
+        if (word.toLowerCase().includes(query)) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${word} - ${dictionary[word].definition}`;
+            listItem.onclick = () => showWordDetail(word);
+            results.appendChild(listItem);
+        }
     }
-});
+}
+
+function showWordDetail(word) {
+    const detail = document.getElementById('word-detail');
+    const wordDef = document.getElementById('word-definition');
+    wordDef.textContent = `${word}: ${dictionary[word].definition} (${dictionary[word].category})`;
+}
