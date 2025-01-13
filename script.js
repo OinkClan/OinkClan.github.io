@@ -19,11 +19,16 @@ searchBar.addEventListener("input", function () {
     const query = searchBar.value.toLowerCase();
     const wordType = wordTypeSelect.value;
 
-    const filteredWords = wordsData.filter(word =>
-        (word.oinkish.includes(query) || word.english.toLowerCase().includes(query)) &&
-        (!wordType || word.type === wordType)
-    );
-    displayRecommendations(filteredWords);
+    // Only display recommendations if there is a query
+    if (query.length > 0) {
+        const filteredWords = wordsData.filter(word =>
+            (word.oinkish.includes(query) || word.english.toLowerCase().includes(query)) &&
+            (!wordType || word.type === wordType)
+        );
+        displayRecommendations(filteredWords);
+    } else {
+        recommendationsList.innerHTML = ""; // Clear recommendations if query is empty
+    }
 });
 
 // Display recommendations
