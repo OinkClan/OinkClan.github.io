@@ -1,85 +1,55 @@
-/* General styling */
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+#container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-#mode-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Search bar styling */
-.search input {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 h1 {
-    font-size: 36px;
-    color: #555;
+  font-size: 2.5em;
 }
 
-/* Results list and recommendations */
-ul {
-    list-style-type: none;
-    padding: 0;
+input {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+  width: 60%;
+  border: none;
+  border-radius: 5px;
 }
 
-li {
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
+#recommendations {
+  margin-top: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  width: 60%;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
-#recommendations ul, #word-list ul {
-    max-height: 300px;
-    overflow-y: auto;
+.recommendation-item {
+  padding: 10px;
+  cursor: pointer;
 }
 
-#word-detail {
-    margin-top: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
+.recommendation-item:hover {
+  background-color: #555;
 }
 
-.dark-mode {
-    background-color: #121212;
-    color: #ddd;
-}
-
-.dark-mode input {
-    background-color: #333;
-    color: #fff;
-    border-color: #444;
-}
-
-.dark-mode li {
-    background-color: #333;
-    border-color: #444;
-}
-
-.dark-mode h1 {
-    color: #eee;
+#results {
+  margin-top: 20px;
 }
