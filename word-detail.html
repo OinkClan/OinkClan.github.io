@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header>
-            <button id="theme-toggle">Switch to Light Mode</button>
+            <button id="theme-toggle">Light Mode</button>
             <h1>Word Detail</h1>
         </header>
 
@@ -45,9 +45,9 @@
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("light-mode");
             if (document.body.classList.contains("light-mode")) {
-                themeToggle.textContent = "Switch to Dark Mode";
+                themeToggle.textContent = "Dark Mode";
             } else {
-                themeToggle.textContent = "Switch to Light Mode";
+                themeToggle.textContent = "Light Mode";
             }
         });
     </script>
