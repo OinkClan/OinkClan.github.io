@@ -19,9 +19,10 @@ const wordData = [
         type: "adjective", 
         definitions: ["Bright, shining.", "Used to describe an illuminated object."]
     },
-        word: "ralou", 
+    { 
+        word: "Ralou", 
         type: "adjective", 
-        definitions: ["The color red"]
+        definitions: ["The color red."]
     },
     { 
         word: "U", 
