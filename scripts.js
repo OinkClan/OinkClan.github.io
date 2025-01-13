@@ -27,7 +27,6 @@ function showSuggestions() {
 }
 
 function showWordEntry(wordEntry) {
-    // Build URL with the word as a query parameter
     const wordPageUrl = `wordEntry.html?word=${encodeURIComponent(wordEntry.word)}`;
     window.location.href = wordPageUrl;
 }
