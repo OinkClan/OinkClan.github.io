@@ -2,16 +2,31 @@
     {
         "oinkish": "hu",
         "english": "hello",
-        "definition": "A greeting used to express a friendly hello."
+        "definition": "A greeting used to express a friendly hello.",
+        "type": "noun"
     },
     {
         "oinkish": "ma",
         "english": "mother",
-        "definition": "A female parent."
+        "definition": "A female parent.",
+        "type": "noun"
     },
     {
         "oinkish": "ra",
         "english": "rain",
-        "definition": "Water falling from the sky in drops."
+        "definition": "Water falling from the sky in drops.",
+        "type": "noun"
+    },
+    {
+        "oinkish": "ru",
+        "english": "to move quickly",
+        "definition": "To move fast on foot.",
+        "type": "verb"
+    },
+    {
+        "oinkish": "ai",
+        "english": "quickly",
+        "definition": "In a fast manner.",
+        "type": "adverb"
     }
 ]
