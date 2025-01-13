@@ -49,3 +49,9 @@ function filterByType(type) {
   selectedType = type;
   showRecommendations();  // Re-run the search function to apply the filter
 }
+
+// Toggle the dropdown menu
+function toggleDropdown() {
+  const dropdown = document.querySelector('.dropdown');
+  dropdown.classList.toggle('show');
+}
